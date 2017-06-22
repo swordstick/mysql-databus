@@ -5,6 +5,7 @@ databuse是一个由GO开发,高可用的，Mysql数据快照和数据变更存�
 该项目致力于简化DBA或者应用开发人员对来自Mysql数据的实时获取和变型使用。
 
 
+
 ## 主要功能
 
 1. 提供数据初始化快照获取能力
@@ -21,6 +22,10 @@ databuse是一个由GO开发,高可用的，Mysql数据快照和数据变更存�
 12. 支持DDL的传输，解决了RENAME问题
 13. 服务端支持表过滤及指定表
 
+### CLIENT
+
+* 为便于使用，将CLIENT SDK代码独立出来，放于一下GITHUB中，移步获取
+[The Client SDK for mysql-databus](https://github.com/swordstick/grandet)
 
 ## MYSQL-DATABUS文档
 
