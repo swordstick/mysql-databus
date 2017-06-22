@@ -43,8 +43,8 @@ databuse是一个由GO开发,高可用的，Mysql数据快照和数据变更存�
 
 ### 鸣谢：
 
-* 感谢go-mysql的作者siddontang，Mysql-Databus最初实现基于go-mysql工具包
-* 感谢编写过程中提供各类思路的延与，盟主等好基友
+* 感谢[go-mysql][10]的作者siddontang，Mysql-Databus依赖的datapipe最初实现基于go-mysql工具包
+* 感谢编写过程中提供各类思路的延允，盟主等好基友
 
 [1]: https://github.com/swordstick/mysql-databus/blob/master/doc/databus_server_%E5%AE%89%E8%A3%85.md
 [2]: https://github.com/swordstick/mysql-databus/blob/master/doc/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E4%BB%8B%E7%BB%8D.md
@@ -55,3 +55,4 @@ databuse是一个由GO开发,高可用的，Mysql数据快照和数据变更存�
 [7]: https://github.com/swordstick/mysql-databus/blob/master/doc/mysql-databus_%E4%BC%A0%E8%BE%93%E6%95%B0%E6%8D%AE%E5%B0%81%E8%A3%85%E4%BB%8B%E7%BB%8D.md
 [8]: https://github.com/swordstick/mysql-databus/blob/master/doc/mysql-databus_sdk%E8%AE%BE%E8%AE%A1%E4%BB%8B%E7%BB%8D.md
 [9]: https://github.com/swordstick/mysql-databus/blob/master/doc/mysql-client_getevnet%E5%87%BD%E6%95%B0%E8%BF%94%E5%9B%9E%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.md
+[10]: https://github.com/siddontang/go-mysql
