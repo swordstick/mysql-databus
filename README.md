@@ -52,8 +52,14 @@ databuse是一个由GO开发,高可用的，Mysql数据快照和数据变更存�
 ### 鸣谢：
 
 * 感谢[go-mysql][10]的作者siddontang，Mysql-Databus依赖的datapipe最初实现基于go-mysql工具包
-* 感谢编写过程中提供各类思路的延允，盟主等好基友
+* 感谢编写过程中提供各类思路的延允,盟主,邵青等好基友
 
+### 作者：
+
+swordstick
+[www.dbathread.com][db]
+
+[db]: http://www.dbathread.com
 [1]: https://github.com/swordstick/mysql-databus/blob/master/doc/databus_server_%E5%AE%89%E8%A3%85.md
 [2]: https://github.com/swordstick/mysql-databus/blob/master/doc/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E4%BB%8B%E7%BB%8D.md
 [3]: https://github.com/swordstick/mysql-databus/blob/master/doc/%E4%BA%A4%E4%BA%92%E5%91%BD%E4%BB%A4%E4%BB%8B%E7%BB%8D.md
