@@ -18,7 +18,7 @@ type DumpConfig struct {
 	TableDB string   `toml:"table_db"`
 
 	// fordbs
-	//Databases []string `toml:"dbs"`
+	Databases []string `toml:"dbs"`
 
 	// Ignore table format is db.table
 	IgnoreTables []string `toml:"ignore_tables"`

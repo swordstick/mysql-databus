@@ -1,4 +1,4 @@
-## DATABUS CLIENT SDK使用介绍
+## DATABUS CLIENT SDK使用介绍-初始化
 
 ### 引用包
 
@@ -6,7 +6,9 @@
 
 ### 示例程序说明
 
-* 实例程序在main/grandet.go中
+* 初始化
+* 实例程序在main/grandet_Firstload.go中
+* FirsetLoad = true && Replinfopath文件不存在
 
 #### 初始化变量
 

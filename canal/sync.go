@@ -71,8 +71,6 @@ func (c *Canal) startSyncBinlog() error {
 		case *replication.XIDEvent:
 			// try to save the position later
 		case *replication.QueryEvent:
-			// 暂时屏蔽该操作
-			// continue
 			// handle alert table query
 			if mb := expAlterTable.FindSubmatch(e.Query); mb != nil {
 				if len(mb[1]) == 0 {
@@ -80,7 +78,7 @@ func (c *Canal) startSyncBinlog() error {
 				}
 				c.ClearTableCache(mb[1], mb[2])
 				// alter will be ignore for filtercols func running
-
+				/* 暂时屏蔽表过滤，字段过滤功能
 				if FilterTabs[string(mb[2])] {
 					log.Warningf("table structure changed, but will be ignore for filtercols or optimus func of %s.%s\n", mb[1], mb[2])
 					c.master.Update(pos.Name, pos.Pos, "", 0, -1, "")
@@ -94,7 +92,7 @@ func (c *Canal) startSyncBinlog() error {
 					c.master.Save(forceSavePos)
 					continue
 				}
-
+				*/
 				if err = c.handleQueryEvent(ev, string(mb[1]), string(mb[2])); err != nil {
 					log.Errorf("handle Query event(%s:%d) error %v", pos.Name, pos.Pos, err)
 					return errors.Trace(err)

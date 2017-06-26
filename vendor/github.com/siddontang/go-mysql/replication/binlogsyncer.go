@@ -1,14 +1,14 @@
 package replication
 
 import (
+	"context"
 	"crypto/tls"
 	"encoding/binary"
 	"fmt"
 	"os"
+	"strings"
 	"sync"
 	"time"
-
-	"context"
 	//"golang.org/x/net/context"
 
 	"github.com/juju/errors"
@@ -521,6 +521,10 @@ func (b *BinlogSyncer) onStream(s *BinlogStreamer) {
 		switch data[0] {
 		case OK_HEADER:
 			if err = b.parseEvent(s, data); err != nil {
+				if strings.Contains(fmt.Sprint(err), "invalid table id") {
+					log.Error("Skip parseEvent for invalid table id,This is a Tmp means \n")
+					break
+				}
 				s.closeWithError(err)
 				return
 			}
@@ -555,6 +559,7 @@ func (b *BinlogSyncer) parseEvent(s *BinlogStreamer, data []byte) error {
 
 	e, err := b.parser.parse(data)
 	if err != nil {
+		log.Debug(err)
 		return errors.Trace(err)
 	}
 

@@ -1,29 +1,29 @@
 # This is a TOML document. Boom.
 
 
-addr = "10.169.2.1:3306"
+addr = "10.169.117.85:3306"
 user = "root"
-password = "davidwan"
+password = "wandongbokugou"
 server_id = 665
 flavor = "mysql"
 topic = "databustest.test"
 dumpthreads = 20
 dumpclock = 120
 data_dir = "/root/data/"
-brokers = ["10.29.1.1:19092", "10.27.1.2:19092", "10.169.1.3:19092"]
-zkpath = ["10.29.1.1:12181", "10.27.1.2:12181", "10.169.1.3:12181"]
+brokers = ["10.29.204.73:19092","10.27.185.100:19092","10.169.117.85:19092"]
+zkpath = ["10.29.204.73:12181","10.27.185.100:12181","10.169.117.85:12181"]
 nodename = "DumpMeta"
 keepalivepath = "KeepAliveNode"
-monitorip = "10.169.1.11"
+monitorip = "10.169.117.85"
 monitorport = "888"
 monitorclient = "999"
 log_level = "info"
 log_dir = "/root/log/"
 logfile = "databus_error.log"
-sshhostname = "10.169.1.12"
+sshhostname = "10.29.204.73"
 sshport = "22"
 sshuser = "root"
-sshpasswd = "David123"
+sshpasswd = "Davidwan123"
 remote_dir = "/root/data/"
 mirror_enable = true
 masteralive_timeout = 240
@@ -31,9 +31,7 @@ auth = "swordstick"
 [dump]
 mysqldump = "/usr/local/mysql/bin/mysqldump"
 tables = []
-table_db = "test"
+table_db = ""
+dbs = [test]
 Ignore_tables = []
 discard_err = false
-[Filters]
-
-[Optimus]

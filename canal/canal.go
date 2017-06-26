@@ -212,24 +212,41 @@ func (c *Canal) prepareDumper() error {
 	}
 
 	// fordbs
-	// dbs := c.cfg.Dump.Databases
+	dbs := c.cfg.Dump.Databases
 	tables := c.cfg.Dump.Tables
 	tableDB := c.cfg.Dump.TableDB
 
-	if len(tableDB) == 0 {
-		panic("tableDB can not be Empty !!!")
-	} else if len(tableDB) != 0 && len(tables) == 0 {
-		c.dumper.TableDB = tableDB
-		//c.dumper.AddDatabases(tableDB)
-	} else {
-		for _, sub := range tables {
-			c.dumper.AddTables(tableDB, sub)
-			//c.AddDumpTables(tableDB, sub)
+	/*
+		if len(tableDB) == 0 {
+			panic("tableDB can not be Empty !!!")
+		} else if len(tableDB) != 0 && len(tables) == 0 {
+			c.dumper.TableDB = tableDB
+			//c.dumper.AddDatabases(tableDB)
+		} else {
+			for _, sub := range tables {
+				c.dumper.AddTables(tableDB, sub)
+				//c.AddDumpTables(tableDB, sub)
+			}
 		}
+	*/
+
+	if len(tables) == 0 {
+		c.dumper.AddDatabases(dbs...)
+	} else {
+		c.dumper.AddTables(tableDB, tables...)
 	}
 
-	for _, sub := range c.cfg.Dump.IgnoreTables {
-		c.AddDumpIgnoreTables(c.dumper.TableDB, sub)
+	/*
+		for _, sub := range c.cfg.Dump.IgnoreTables {
+			c.AddDumpIgnoreTables(c.dumper.TableDB, sub)
+		}
+	*/
+
+	//我认为应当是"."而非"","
+	for _, ignoreTable := range c.cfg.Dump.IgnoreTables {
+		if seps := strings.Split(ignoreTable, "."); len(seps) == 2 {
+			c.dumper.AddIgnoreTables(seps[0], seps[1])
+		}
 	}
 
 	if c.cfg.Dump.DiscardErr {
@@ -333,6 +350,7 @@ func (c *Canal) GetTable(db string, table string) (*schema.Table, error) {
 	log.Info("GetTable do not exist the Table !! \n")
 	t, err := schema.NewTable(c, db, table)
 	if err != nil {
+		log.Info("schema.NewTalbe Worng !\n")
 		return nil, errors.Trace(err)
 	}
 

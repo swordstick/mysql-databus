@@ -114,13 +114,13 @@ func (p *Postooffset) SearchAsc() (int64, error) {
 			fmt.Println(err)
 		case msg := <-p.Poconsumer.Messages():
 			if myPos := parseJsonKey(msg.Key); myPos != nil {
-				valuepos, ok := myPos.(mysql.Position)
+				valuepos, ok := myPos.(KafkaKey)
 				if !ok {
 					log.Warning("type assertion is wrong")
 					continue
 				}
-				if p.Name == valuepos.Name && uint32(p.Pos) == valuepos.Pos {
-					log.Info("Get offset for ", valuepos.Name, valuepos.Pos, " is ", msg.Offset)
+				if p.Name == valuepos.Pos.Name && uint32(p.Pos) == valuepos.Pos.Pos {
+					log.Info("Get offset for ", valuepos.Pos.Name, valuepos.Pos.Pos, " is ", msg.Offset)
 					return msg.Offset, nil
 				}
 			}

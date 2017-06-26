@@ -21,7 +21,6 @@ func init() {
 	runtime.GOMAXPROCS(runtime.NumCPU())
 }
 
-
 func main() {
 	flag.Parse()
 	var cfg *canal.Config
@@ -41,6 +40,7 @@ func main() {
 	fmt.Printf("%s is Topic", cfg.Topic)
 	// canal.NewSyncProducerToKafka(cfg.Topic)
 
+	/* 暂时屏蔽字段过滤，和表名转换功能
 	if err := canal.ParseFilter(*configFile); err != nil {
 		log.Panicf("parse filterclos file failed(%s): %s", *configFile, err)
 	}
@@ -48,6 +48,8 @@ func main() {
 	if err := canal.ParseOptimus(*configFile); err != nil {
 		log.Panicf("parse optimus file failed(%s): %s", *configFile, err)
 	}
+
+	*/
 
 	go tranferData(cfg)
 

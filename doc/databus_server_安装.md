@@ -20,6 +20,20 @@ $ GO INSTALL src/main/databus.go
 ./databus -c {CONFIGFDIR}/databus.toml 
 ```
 
+## 额外支持组件部署
+
+
+* KAFKA 
+* ZOOKEEPER 
+
+配置文件中分别制定为<br>
+
+* brokers -- Kafka<br>
+* zkpath -- Zookeeper 
+
+因为Kafka对Zookeeper依赖，所以只要部署好Kafka实质上都完成
+
+
 ## 部署方式
 
 ### 单机部署

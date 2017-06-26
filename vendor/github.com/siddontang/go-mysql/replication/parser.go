@@ -7,6 +7,7 @@ import (
 	"os"
 
 	"github.com/juju/errors"
+	"github.com/ngaut/log"
 )
 
 type BinlogParser struct {
@@ -189,6 +190,7 @@ func (p *BinlogParser) parseEvent(h *EventHeader, data []byte) (Event, error) {
 	}
 
 	if err := e.Decode(data); err != nil {
+		log.Debug(err)
 		return nil, &EventError{h, err.Error(), data}
 	}
 
@@ -212,6 +214,7 @@ func (p *BinlogParser) parse(data []byte) (*BinlogEvent, error) {
 	h, err := p.parseHeader(data)
 
 	if err != nil {
+		log.Debug(err)
 		return nil, err
 	}
 
@@ -224,6 +227,7 @@ func (p *BinlogParser) parse(data []byte) (*BinlogEvent, error) {
 
 	e, err := p.parseEvent(h, data)
 	if err != nil {
+		// log.Error(err)
 		return nil, err
 	}
 
