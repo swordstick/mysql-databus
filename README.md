@@ -56,8 +56,9 @@ databuse是一个由GO开发,高可用的，Mysql数据快照和数据变更存�
 
 ### 作者：
 
-swordstick
-[www.dbathread.com][db]
+swordstick<br>
+[linkedin链接](http://www.linkedin.com/in/swordstick/)<br>
+[技术站 www.dbathread.com][db]<br>
 
 [db]: http://www.dbathread.com
 [1]: https://github.com/swordstick/mysql-databus/blob/master/doc/databus_server_%E5%AE%89%E8%A3%85.md
