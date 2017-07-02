@@ -23,8 +23,8 @@ databuse是一个由GO开发,高可用的，Mysql数据快照和数据变更存�
 13. 服务端支持过滤表
 14. 提供SDK客户端指定起始BINLOG POS位置(绕过初始化)
 15. 支持DDL的传输(包含ALTER,CREATE,DROP,TRUNCATE)，解决了ALTER RENAME问题
-16. DDL操作传输前自动增加SCHEMA，Clinet SDK端获取后不必切换DB即可使用
-17. DML操作在Client SDK获取后，自动增加SCHEMA，不必切换DB即可使用
+16. DDL操作传输前自动增加SCHEMA，Clinet SDK端获取后，若目标端为MYSQL，不必切换DB即可使用
+17. DML操作在Client SDK获取后，自动增加SCHEMA，，若目标端为MYSQL，不必切换DB即可使用
 
 ### CLIENT
 
