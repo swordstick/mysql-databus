@@ -5,9 +5,9 @@ databuse是一个由GO开发,高可用的，Mysql数据快照和数据变更存�
 整个Mysql数据抽取和分发，获取的细节，被封装起来，使用者只要关注数据的使用即可。<br>
 该项目致力于简化DBA或者应用开发人员对来自Mysql数据的实时获取和变型使用。
 
-> MYSQL-DATABUS暂未支持GTID,近期将更新支持<br>
-> 下图来自互联网，较好表达了MYSQL-DATABUS价值(但MYSQL-DATABUS额外提供快照) <br>
-> ![表达MYSQL-DATABUS的价值](http://orxb6fkuo.bkt.clouddn.com/%E6%B6%82%E9%B8%A6.jpg)
+* MYSQL-DATABUS暂未支持GTID,近期将更新支持<br>
+* 下图来自互联网，表达了MYSQL-DATABUS价值(但MYSQL-DATABUS还提供快照) <br>
+<img src="http://orxb6fkuo.bkt.clouddn.com/%E6%B6%82%E9%B8%A6.jpg" width = "450" height = "300" alt="DATABUS"  />
 
 
 ## 主要功能
