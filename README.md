@@ -1,10 +1,13 @@
 # MYSQL-DATABUS简介
 
 databuse是一个由GO开发,高可用的，Mysql数据快照和数据变更存储，分发的项目。<br>
-其分为服务端和客户端SDK两部分，服务端存储DUMP快照及BINLOG实时变更，客户端SDK通过简单的API调用，即可从服务端获取到全量快照及其后的变更数据。整个Mysql数据抽取和分发，获取的细节，被封装起来，使用者只要关注数据的使用即可。<br>
+其分为服务端和客户端SDK两部分，服务端存储DUMP快照及BINLOG实时变更，客户端SDK通过简单的API调用，即可从服务端获取到全量快照及其后的变更数据。<br>
+整个Mysql数据抽取和分发，获取的细节，被封装起来，使用者只要关注数据的使用即可。<br>
 该项目致力于简化DBA或者应用开发人员对来自Mysql数据的实时获取和变型使用。
 
-> MYSQL-DATABUS暂未支持GTID,近期将更新支持
+> MYSQL-DATABUS暂未支持GTID,近期将更新支持<br>
+> 下图来自互联网，较好表达了MYSQL-DATABUS价值(但MYSQL-DATABUS额外提供快照) <br>
+> [表达MYSQL-DATABUS的价值](http://orxb6fkuo.bkt.clouddn.com/%E6%B6%82%E9%B8%A6.jpg)
 
 ## 主要功能
 
@@ -50,7 +53,6 @@ databuse是一个由GO开发,高可用的，Mysql数据快照和数据变更存�
 5. [MYSQL-CLIENT GETEVNET()返回的数据结构][9]
 
 
-
 ### 鸣谢：
 
 * 感谢[go-mysql][10]的作者siddontang，Mysql-Databus依赖的datapipe最初实现基于go-mysql工具包
@@ -74,3 +76,4 @@ swordstick<br>
 [9]: https://github.com/swordstick/mysql-databus/blob/master/doc/mysql-client_getevnet%E5%87%BD%E6%95%B0%E8%BF%94%E5%9B%9E%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.md
 [10]: https://github.com/siddontang/go-mysql
 [11]: https://github.com/swordstick/mysql-databus/blob/master/doc/databus_client_sdk%E4%BD%BF%E7%94%A8%E4%BB%8B%E7%BB%8D-%E9%9D%9E%E5%88%9D%E5%A7%8B%E5%8C%96.md
+[12]: http://orxb6fkuo.bkt.clouddn.com/%E6%B6%82%E9%B8%A6.jpg
