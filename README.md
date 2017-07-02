@@ -6,13 +6,13 @@ databuse是一个由GO开发,高可用的，Mysql数据快照和数据变更存�
 该项目致力于简化DBA或者应用开发人员对来自Mysql数据的实时获取和变型使用。
 
 * MYSQL-DATABUS暂未支持GTID,近期将更新支持<br>
-* 下图来自互联网，表达了MYSQL-DATABUS价值(但MYSQL-DATABUS还提供快照) <br>
 <img src="http://orxb6fkuo.bkt.clouddn.com/%E6%B6%82%E9%B8%A6.jpg" width = "450" height = "300" alt="DATABUS"  />
+* 图1来自网络，参考<br>
 
 
 ## 主要功能
 
-1. 提供数据初始化快照获取能力
+1. 提供数据初始化快照获取能力(比图1更完善,重点功能)
 2. 服务端支持容灾部署
 3. 支持DUMP快照的定期更新，保证客户端追加变更的效率
 4. 初始化结束后，客户端运行过程中若关闭，重启后自动续传实时变更
