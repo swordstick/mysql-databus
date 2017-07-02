@@ -7,7 +7,8 @@ databuse是一个由GO开发,高可用的，Mysql数据快照和数据变更存�
 
 > MYSQL-DATABUS暂未支持GTID,近期将更新支持<br>
 > 下图来自互联网，较好表达了MYSQL-DATABUS价值(但MYSQL-DATABUS额外提供快照) <br>
-> [表达MYSQL-DATABUS的价值](http://orxb6fkuo.bkt.clouddn.com/%E6%B6%82%E9%B8%A6.jpg)
+> ![表达MYSQL-DATABUS的价值](http://orxb6fkuo.bkt.clouddn.com/%E6%B6%82%E9%B8%A6.jpg)
+
 
 ## 主要功能
 
