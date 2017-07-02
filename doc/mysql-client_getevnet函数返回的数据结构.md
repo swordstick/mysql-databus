@@ -1,7 +1,7 @@
 ## MYSQL-CLIENT GETEVNET()返回的数据结构
 
 
-### ROWSEVENT
+### ROWSEVENT 即 DML操作封装
 
 ```
 type RowsEvent struct {
@@ -17,7 +17,7 @@ type RowsEvent struct {
 ```
 
 
-### QUERYEVENT
+### QUERYEVENT 即 DDL操作封装
 
 
 
@@ -26,10 +26,24 @@ type QueryEvent struct {
 	Table  *schema.Table
 	Action string
 
+//Query就是可以直接执行的Create等ddl语句，已经自动封装了schema
 	Query []byte
 }
 
+
 ```
+
+| DDL && DML Action | 字符串 |
+| -- | -- |
+| Update | "update" |
+| Inset | "insert" |
+| Delete | "delete" |
+| Alter | "alter" |
+| Create | "create" |
+| Drop | "drop" |
+| Truncate | "truncate" |
+
+
 
 ### SCHEMA.TABLE 结构体
 

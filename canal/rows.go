@@ -13,6 +13,9 @@ const (
 	InsertAction = "insert"
 	DeleteAction = "delete"
 	AlterAction  = "alter" // add
+	CreateAction = "create"
+	DropAction   = "drop"
+	TruncAction  = "truncate"
 )
 
 // add
