@@ -2,6 +2,7 @@ package canal
 
 import (
 	"regexp"
+	"strings"
 	"time"
 
 	"context"
@@ -122,7 +123,7 @@ func (c *Canal) startSyncBinlog() error {
 					continue
 				}
 				*/
-				if err = c.handleQueryEvent(ev, string(mb[1]), string(mb[2]), AlterAction); err != nil {
+				if err = c.handleQueryEvent(ev, string(mb[1]), strings.TrimSpace(string(mb[2])), AlterAction); err != nil {
 					log.Errorf("handle Query event(%s:%d) error %v", pos.Name, pos.Pos, err)
 					return errors.Trace(err)
 				}
@@ -156,7 +157,7 @@ func (c *Canal) startSyncBinlog() error {
 					e.Query = newquery
 				}
 
-				if err = c.handleQueryEvent(ev, string(mb[1]), string(mb[2]), CreateAction); err != nil {
+				if err = c.handleQueryEvent(ev, string(mb[1]), strings.TrimSpace(string(mb[2])), CreateAction); err != nil {
 					log.Errorf("handle Query event(%s:%d) error %v", pos.Name, pos.Pos, err)
 					return errors.Trace(err)
 				}
@@ -187,7 +188,7 @@ func (c *Canal) startSyncBinlog() error {
 					e.Query = newquery
 				}
 
-				if err = c.handleQueryEvent(ev, string(mb[1]), string(mb[2]), DropAction); err != nil {
+				if err = c.handleQueryEvent(ev, string(mb[1]), strings.TrimSpace(string(mb[2])), DropAction); err != nil {
 					log.Errorf("handle Query event(%s:%d) For Drop table error %v", pos.Name, pos.Pos, err)
 					continue
 					//return errors.Trace(err)
@@ -221,7 +222,7 @@ func (c *Canal) startSyncBinlog() error {
 					e.Query = newquery
 				}
 
-				if err = c.handleQueryEvent(ev, string(mb[1]), string(mb[2]), TruncAction); err != nil {
+				if err = c.handleQueryEvent(ev, string(mb[1]), strings.TrimSpace(string(mb[2])), TruncAction); err != nil {
 					log.Errorf("handle Query event(%s:%d) table error %v", pos.Name, pos.Pos, err)
 					return errors.Trace(err)
 				}
