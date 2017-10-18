@@ -117,7 +117,7 @@ func insert(table *schema.Table, row []interface{}) (string, error) {
 		if row[k] == nil {
 			values += "NULL,"
 		} else {
-			values += "'" + EscapeStringBackslash(InterfaceToString(row[k])) + "',"
+			values += "'" + EscapeStringBackslash(InterfaceToStringRawType(row[k],table.Columns[k].RawType)) + "',"
 		}
 	}
 	if columns == "" || values == "" {
